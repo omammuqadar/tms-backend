@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}))
 // ____
 
 app.use('/backend/user', require('./routes/userRoutes'))
+app.use('/backend/program', require('./routes/programRoutes'))
 
 app.use(errorHandler)
 
