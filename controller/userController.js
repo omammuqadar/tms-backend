@@ -42,14 +42,14 @@ const setUser = asyncHandler(async (req, res) => {
 // @desc    Get user
 // @route   GET /backend/user
 // @access  Private
-const getUser = asyncHandler(async (req, res) => {
+const getUsers = asyncHandler(async (req, res) => {
   const user = await User.find() 
 
   res.status(200).json(user)
 })
 
-const getUserByEmail = asyncHandler(async (req, res) => {
-  const user = await User.findOne(req.params.email) 
+const getUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id) 
 
   res.status(200).json(user)
 })
@@ -90,8 +90,8 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   setUser,
+  getUsers,
   getUser,
-  getUserByEmail,
   updateUser,
   deleteUser
 }
